@@ -1,0 +1,229 @@
+/*'#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'*/
+.section:nth-child(1){
+    background: #0da5d6;
+}
+.section:nth-child(1) .logo{
+    text-align: center;
+    padding-top: 100px;
+}
+.section:nth-child(1) .text{
+    padding: 30px 0;
+    text-align: center;
+}
+.section:nth-child(1) .text img{
+    margin: 0 35px;
+    opacity: 0.2;
+}
+.section:nth-child(1) .info{
+    text-align: center;
+}
+/*做动画*/
+.section:nth-child(1).now .text img{
+    transition: all 1s;
+    margin: 0 5px;
+    opacity: 1;
+}
+
+
+.section:nth-child(2){
+    background: #2AB561;
+    display: flex;
+    /*排列的方式*/
+    justify-content:center;
+}
+.section:nth-child(2) .shield{
+    width: 450px;
+    margin-top: 100px;
+}
+
+.section:nth-child(2) .shield img:first-child{
+    transform: rotate(-30deg) translateX(-200px);
+}
+.section:nth-child(2) .shield img:last-child{
+    transform: rotate(30deg) translateX(200px);
+}
+.section:nth-child(2) .info{
+    margin-top: 150px;
+}
+
+.section:nth-child(2).now .shield img{
+    transition: all 1s;
+    transform: none;
+}
+
+
+
+
+.section:nth-child(3){
+    background: #DE8910;
+    display: flex;
+    /*排列的方式*/
+    justify-content:center;
+    overflow: hidden;
+}
+.section:nth-child(3) .info{
+    margin-top: 200px;
+}
+.section:nth-child(3) .circle{
+    margin-top: 120px;
+    position: relative;
+}
+.section:nth-child(3) .circle .rocket{
+    position: absolute;
+    left: 130px;
+    top: 130px;
+    transform: translate3d(-600px,600px,0);
+}
+.section:nth-child(3).now .circle .rocket{
+    transition: all 1s;
+    transform: none;
+}
+
+
+
+.section:nth-child(4){
+    background: #16BA9D;
+    display: flex;
+    /*排列的方式*/
+    justify-content:center;
+}
+.section:nth-child(4) .search{
+    margin-top: 140px;
+    position: relative;
+}
+.section:nth-child(4) .search .searchBar{
+    transform: translateX(-200%);
+}
+.section:nth-child(4) .search .keys{
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    width: 0px;
+    overflow: hidden;
+}
+.section:nth-child(4) .search .result{
+    position: absolute;
+    left: 0;
+    top: 53px;
+    width: 529px;
+    height: 372px;
+    overflow: hidden;
+}
+.section:nth-child(4) .search .result img{
+    transform: translateY(-100%);
+}
+/*1.搜索栏*/
+.section:nth-child(4).now .search .searchBar{
+    transition: all 1s;
+    transform: none;
+}
+.section:nth-child(4).now .search .keys{
+    animation: keys 1.5s steps(5) 1s forwards;
+}
+/*2.关键字*/
+@keyframes keys {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 99px;
+    }
+}
+/*3.结果*/
+.section:nth-child(4).now .search .result img{
+    transition: all 1s linear 2.5s;
+    transform: none;
+}
+.section:nth-child(4) .info{
+    margin-top: 140px;
+}
+
+
+
+.section:nth-child(5){
+    background: #0DA5D6;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.section:nth-child(5) .info{
+    text-align: center;
+    padding: 15px 0;
+}
+.section:nth-child(5) .browser{
+    width: 1004px;
+    margin: 0 auto;
+    flex: 1;
+    position: relative;
+    background: rgba(255,255,255,0.2);
+}
+.section:nth-child(5) .browser [class^="line_"]{
+    position: absolute;
+    background: rgba(255,255,255,0.6);
+}
+.section:nth-child(5) .line_top{
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 0;
+    transform: translateX(200%);
+}
+.section:nth-child(5) .line_right{
+    width: 1px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: translateY(200%);
+}
+.section:nth-child(5) .line_bottom{
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-200%);
+}
+.section:nth-child(5) .line_left{
+    width: 1px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translateY(-200%);
+}
+.section:nth-child(5) .line_middle{
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 30px;
+}
+.section:nth-child(5) .other{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.section:nth-child(5) .box{
+    position: absolute;
+    left: 70px;
+    top: 32px;
+    /*width: 920px;*/
+    height: 24px;
+    border: 1px solid rgba(255,255,255,0.6);
+    opacity: 0;
+    width: 0px;
+}
+.section:nth-child(5) .tools{
+    opacity: 0;
+}
+
+.section:nth-child(5).now .browser [class^="line_"]{
+    transition: all 1s;
+    transform: none;
+}
+.section:nth-child(5).now .tools{
+    transition: all 1s linear 1s;
+    opacity: 1;
+}
+.section:nth-child(5).now .box{
+    transition: all 1s linear 1s;
+    width: 920px;
+    opacity: 1;
+}
